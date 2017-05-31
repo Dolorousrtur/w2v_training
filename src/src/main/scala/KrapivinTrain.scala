@@ -41,6 +41,7 @@ object KrapivinTrain extends App{
     .minWordFrequency(5)
     .iterations(1)
     .layerSize(100)
+    .epochs(20)
     .seed(42)
     .windowSize(5)
     .iterate(iter)
@@ -50,9 +51,6 @@ object KrapivinTrain extends App{
   vec.fit()
 
   println("After creation")
-
-  vec.fit()
-  println("After fit")
 
   WordVectorSerializer.writeWord2VecModel(vec, "wordvectors")
 
