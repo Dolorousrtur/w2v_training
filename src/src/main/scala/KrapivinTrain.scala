@@ -41,7 +41,7 @@ object KrapivinTrain extends App{
     .minWordFrequency(5)
     .iterations(1)
     .layerSize(100)
-    .epochs(20)
+    .epochs(1)
     .seed(42)
     .windowSize(5)
     .iterate(iter)
@@ -52,7 +52,11 @@ object KrapivinTrain extends App{
 
   println("After creation")
 
-  WordVectorSerializer.writeWord2VecModel(vec, "wordvectors")
+  WordVectorSerializer.writeWord2VecModel(vec, "wordvectors2")
+
+
+  // test loading model
+  WordVectorSerializer.readWord2VecModel("wordvectors2", true)
 
 
 }
